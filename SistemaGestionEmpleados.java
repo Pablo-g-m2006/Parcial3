@@ -10,8 +10,8 @@ public class SistemaGestionEmpleados {
 
     public void aumentarSalario(double porcentaje) {
         for (Empleado empleado : empleados) {
-            double nuevoSalario = empleado.salario * (1 + porcentaje / 100);
-            empleado.salario = nuevoSalario;
+            double nuevoSalario = empleado.getSalario() * (1 + porcentaje / 100);
+            empleado.setSalario(nuevoSalario);
         }
     }
 
@@ -28,7 +28,7 @@ public class SistemaGestionEmpleados {
         double porcentaje = scanner.nextDouble();
 
         sistema.aumentarSalario(porcentaje);
-        
+
         System.out.println("Lista de Empleados:");
         for (Empleado empleado : empleados) {
             System.out.println(empleado);
